@@ -12,6 +12,25 @@ function getComputerChoice() {
     }
 }
 
+// This function will return the users choice as a string
+function getUserChoice() {
+    let question = prompt('Rock, Paper, or Scissors: ')
+    let answer = '';
+
+    if (question == 'Rock' ||   question == 'rock' || question == 'ROCK' || question == 'RocK') {
+        answer = 'rock';
+    }
+    else if ( question == 'Paper' || question == 'PAPER' || question == 'paper') {
+        answer = 'paper';
+    }
+    else if (question == 'Scissors' || question == 'SCISSORS' || question == 'scissors') {
+        answer = 'scissors';
+    } else {
+       answer = prompt("Please input the correct spelling: ");
+    }
+    return answer;
+}
+
 // This function will play a single round and will return a string that declares the winner
 function playRound(playerSelection, computerSelection) {
     let result = '';
