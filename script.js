@@ -17,7 +17,7 @@ function getUserChoice() {
     let question = prompt('Rock, Paper, or Scissors: ')
     let answer = '';
 
-    if (question == 'Rock' ||   question == 'rock' || question == 'ROCK' || question == 'RocK') {
+    if (question == 'Rock' || question == 'rock' || question == 'ROCK' || question == 'RocK') {
         answer = 'rock';
     }
     else if ( question == 'Paper' || question == 'PAPER' || question == 'paper') {
@@ -53,7 +53,7 @@ function playRound(playerSelection, computerSelection) {
         result = "You loose! Rock beats scissors.";
     }
     else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        result = 'You win! Scissors beat Rock.';
+        result = 'You win! Scissors beat Paper.';
     }
     return result;
 }
