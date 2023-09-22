@@ -57,3 +57,28 @@ function playRound(playerSelection, computerSelection) {
     }
     return result;
 }
+
+// This function will run multiple rounds of 'Rock, Paper, Scissors'
+function game() {
+    let userChoice = '';
+    let userScore = 0;
+    let computerScore = 0;
+    let computerChoice = '';
+    let result = '';
+
+    // Loop to play 5 rounds
+    for (let i = 0; i < 5; i++) {
+        userChoice = getUserChoice();
+        computerChoice = getComputerChoice();
+        result = playRound(userChoice, computerChoice);
+        if (result.includes('win')) {
+            userScore += 1;
+        } else {
+            computerScore += 1;
+        }
+        console.log(`Round ${i+1}: ${result}`);
+    }
+    console.log(`\nThe final scores:\nUser - ${userScore} \nComputer - ${computerScore}`);
+}
+
+game();
