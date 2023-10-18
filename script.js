@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
         result = 'You win! Paper beats Rock';
     }
     else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-        result = 'You loose. Scissors beat Paper.'
+        result = 'You loose! Scissors beat Paper.'
     }
     else if (playerSelection == 'scissors' && computerSelection == 'rock') {
         result = "You loose! Rock beats scissors.";
@@ -43,9 +43,10 @@ function playRound(playerSelection, computerSelection) {
 let computer_score = 0
 let player_score = 0
 function game(playerSelection) {
-    const result_field = document.querySelector('.text');
     const display_player_score = document.querySelector('.player-score')
     const display_computer_score = document.querySelector('.computer-score')
+    const display_results = document.querySelector('.text')
+    const textnode = document.createElement("li")
 
     let userChoice = playerSelection
     let computerChoice = getComputerChoice();
@@ -58,7 +59,8 @@ function game(playerSelection) {
         computer_score += 1
         display_computer_score.textContent = computer_score.toString()
     }
-    result_field.textContent = result
+    textnode.textContent = result
+    display_results.appendChild(textnode)
 }
 
 const rock_btn = document.querySelector('.rock-btn')
