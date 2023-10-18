@@ -46,6 +46,7 @@ function game(playerSelection) {
     const display_player_score = document.querySelector('.player-score')
     const display_computer_score = document.querySelector('.computer-score')
     const display_results = document.querySelector('.text')
+    const winner = document.querySelector('.winner')
     const textnode = document.createElement("li")
 
     let userChoice = playerSelection
@@ -59,8 +60,15 @@ function game(playerSelection) {
         computer_score += 1
         display_computer_score.textContent = computer_score.toString()
     }
+
     textnode.textContent = result
     display_results.appendChild(textnode)
+    if (player_score == 5) {
+        winner.textContent = 'You are the final winner!'
+    } 
+    if (computer_score == 5) {
+        winner.textContent = 'The computer is the final winner!'
+    }
 }
 
 const rock_btn = document.querySelector('.rock-btn')
