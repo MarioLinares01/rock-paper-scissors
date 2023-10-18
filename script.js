@@ -12,25 +12,6 @@ function getComputerChoice() {
     }
 }
 
-// This function will return the users choice as a string
-function getUserChoice() {
-    let question = prompt('Rock, Paper, or Scissors: ')
-    let answer = '';
-
-    if (question == 'Rock' || question == 'rock' || question == 'ROCK' || question == 'RocK') {
-        answer = 'rock';
-    }
-    else if ( question == 'Paper' || question == 'PAPER' || question == 'paper') {
-        answer = 'paper';
-    }
-    else if (question == 'Scissors' || question == 'SCISSORS' || question == 'scissors') {
-        answer = 'scissors';
-    } else {
-       answer = prompt("Please input the correct spelling: ");
-    }
-    return answer;
-}
-
 // This function will play a single round and will return a string that declares the winner
 function playRound(playerSelection, computerSelection) {
     let result = '';
@@ -59,26 +40,38 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // This function will run multiple rounds of 'Rock, Paper, Scissors'
-function game() {
-    let userChoice = '';
-    let userScore = 0;
-    let computerScore = 0;
-    let computerChoice = '';
-    let result = '';
+let computer_score = 0
+let player_score = 0
+function game(playerSelection) {
+    const result_field = document.querySelector('.text');
+    const display_player_score = document.querySelector('.player-score')
+    const display_computer_score = document.querySelector('.computer-score')
 
-    // Loop to play 5 rounds
-    for (let i = 0; i < 5; i++) {
-        userChoice = getUserChoice();
-        computerChoice = getComputerChoice();
-        result = playRound(userChoice, computerChoice);
-        if (result.includes('win')) {
-            userScore += 1;
-        } else {
-            computerScore += 1;
-        }
-        console.log(`Round ${i+1}: ${result}`);
+    let userChoice = playerSelection
+    let computerChoice = getComputerChoice();
+    let result = playRound(userChoice, computerChoice);
+
+    if (result.includes('win')) {
+        player_score += 1
+        display_player_score.textContent = player_score.toString()
+    } else {
+        computer_score += 1
+        display_computer_score.textContent = computer_score.toString()
     }
-    console.log(`\nThe final scores:\nUser - ${userScore} \nComputer - ${computerScore}`);
+    result_field.textContent = result
 }
 
-game();
+const rock_btn = document.querySelector('.rock-btn')
+rock_btn.addEventListener('click', function(e) {
+    game('rock')
+})
+
+const paper_btn = document.querySelector('.paper-btn')
+paper_btn.addEventListener('click', function(e) {
+    game('paper')
+})
+
+const scissors_btn = document.querySelector('.scissors-btn')
+scissors_btn.addEventListener('click', function(e) {
+    game('scissors')
+})
