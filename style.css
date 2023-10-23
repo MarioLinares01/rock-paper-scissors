@@ -7,6 +7,7 @@ body {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  background-color: #B5E2FA;
 }
 
 ul {
@@ -23,6 +24,21 @@ img {
   max-width: 100px;
   height: auto;
 }
+
+button {
+  background-color: #d4e3eb;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #0f7882;
+}
+
+button:active {
+  transform: translatex(4px)
+}
+
 
 .scoreboard { 
   display: flex;
@@ -51,12 +67,13 @@ img {
   margin-right: 400px;
   padding: 40px;
   font-size: 20px;
-  border: 3px dashed blue;
+  border: 3px dashed #0f7882;
 }
 
 .winner {
   margin-top: 30px;
   font-size: 24px;
+  font-weight: bolder;
 }
 
 .button-container {
