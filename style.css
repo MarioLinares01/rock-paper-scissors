@@ -7,6 +7,7 @@ body {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  background-color: #B5E2FA;
 }
 
 ul {
@@ -15,38 +16,74 @@ ul {
   padding: 0;
 }
 
+li {
+  margin-bottom: 3px;
+}
+
+img {
+  max-width: 100px;
+  height: auto;
+}
+
+button {
+  background-color: #d4e3eb;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #0f7882;
+}
+
+button:active {
+  transform: translatex(4px)
+}
+
+
 .scoreboard { 
   display: flex;
   justify-content: space-between;
-  margin-left: 90px;
-  margin-right: 90px;
+  margin-left: 140px;
+  margin-right: 140px;
+  margin-top: 30px;
+
 }
 
-.player {
+.player, .computer, .versus {
   display: flex;
   flex-direction: column;
-}
-
-.computer {
-  display: flex;
-  flex-direction: column;
+  font-weight: bold;
+  font-size: 28px;
 }
 
 .results {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
   margin-bottom: 30px;
+  margin-left: 400px;
+  margin-right: 400px;
+  padding: 40px;
+  font-size: 20px;
+  border: 3px dashed #0f7882;
 }
 
+.winner {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bolder;
+}
 
 .button-container {
   display: flex;
   justify-content: center;
+  margin-left: 90px;
+  margin-right: 90px;
 }
 
 .buttons {
   display: flex;
-  gap: 8px;
+  gap: 25px;
 }
