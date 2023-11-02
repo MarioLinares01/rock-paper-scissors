@@ -54,6 +54,8 @@ function game(playerSelection) {
         computer_score = 0
         display_computer_score.textContent = computer_score.toString()
         display_player_score.textContent = player_score.toString()
+
+        display_results.innerHTML = ""
     }
 
     let userChoice = playerSelection
