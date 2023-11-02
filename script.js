@@ -66,7 +66,7 @@ function game(playerSelection) {
     if (result.includes('win')) {
         player_score += 1
         display_player_score.textContent = player_score.toString()
-    } else {
+    } else if (result.includes('loose')) {
         computer_score += 1
         display_computer_score.textContent = computer_score.toString()
     }
