@@ -49,6 +49,13 @@ function game(playerSelection) {
     const winner = document.querySelector('.winner')
     const textnode = document.createElement("li")
 
+    if (player_score == 5 || computer_score == 5) {
+        player_score = 0
+        computer_score = 0
+        display_computer_score.textContent = computer_score.toString()
+        display_player_score.textContent = player_score.toString()
+    }
+
     let userChoice = playerSelection
     let computerChoice = getComputerChoice();
     let result = playRound(userChoice, computerChoice);
