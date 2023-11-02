@@ -56,6 +56,7 @@ function game(playerSelection) {
         display_player_score.textContent = player_score.toString()
 
         display_results.innerHTML = ""
+        winner.textContent = ""
     }
 
     let userChoice = playerSelection
